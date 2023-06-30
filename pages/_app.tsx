@@ -2,10 +2,7 @@ import type { AppProps } from "next/app";
 
 import Head from "next/head";
 
-import dynamic from "next/dynamic";
 import "../styles/index.scss";
-
-const Layout = dynamic(() => import("@/Layout"), { ssr: false });
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
@@ -17,17 +14,12 @@ function MyApp({ Component, pageProps }: AppProps) {
           name="viewport"
           content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"
         />
-        <meta
-          name="description"
-          content="Kelvin Ochubili - Frontend Developer"
-        />
+        <meta name="description" content="" />
         <meta name="keywords" content="Keywords" />
 
-        <title>Kelvin Ochubili - Frontend Developer</title>
+        <title>Next Starter</title>
       </Head>
-      <Layout>
-        <Component {...pageProps} />
-      </Layout>
+      <Component {...pageProps} />
     </>
   );
 }
